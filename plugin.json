@@ -1,0 +1,9 @@
+{ 
+    "name": "Splash",
+    "version": "1.0",
+    "description": "A simple plugin that adds a splash-screen to any theme ",
+    "author": {
+      "name": "Onyx",
+      "link": "https://onyx.codes"
+    }
+  }
