@@ -1,0 +1,160 @@
+/* 
+  Based from this article from Divya Manian - 
+  http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+:before,
+:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+.wrapper {
+    /*Centering tecnique from https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Clip text element */
+.clip-text {
+    font-size: 6em;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    margin: .25em;
+    padding: .5em .75em;
+    text-align: right;
+    /* Color fallback */
+    color: #fff;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+    position: absolute;
+    content: '';
+}
+
+/* Background */
+.clip-text:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+/* Text Background (black zone) */
+.clip-text:after {
+    position: absolute;
+    z-index: -1;
+    top: .125em;
+    right: .125em;
+    bottom: .125em;
+    left: .125em;
+    background-color: #000;
+}
+
+/* Change the background position to display letter when the black zone isn't here */
+.clip-text--no-textzone:before {
+    background-position: -.65em 0;
+}
+
+.clip-text--no-textzone:after {
+    content: none;
+}
+
+/* Use Background-size cover for photo background and no-repeat background */
+.clip-text--cover,
+.clip-text--cover:before {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
+.clip-text_one {
+    background-image: url(http://cdn8.staztic.com/app/a/6278/6278761/hd-abstract-wallpapers-1-0-s-307x512.jpg);
+}
+
+.clip-text_two {
+    background-image: url(http://wallpaper-gallery.net/images/black-abstract-wallpaper/black-abstract-wallpaper-4.jpg);
+}
+
+.clip-text_tree {
+    background-image: url(http://www.cruzine.com/wp-content/uploads/2012/04/005-free-abstract-wallpapers.jpg);
+}
+
+.clip-text_four {
+    background-image: url(http://hd.wallpaperswide.com/thumbs/abstract_black_design_2-t2.jpg);
+}
+
+.clip-text_five {
+    background-image: url(http://powellong.com/data/wallpapers/81/WDF_1255144.jpg);
+}
+
+.clip-text_six {
+    background-image: url(https://www.hdwallpapers.net/previews/3d-colorful-spiral-1057.jpg);
+}
+
+.clip-text_seven {
+    background-image: url(http://cdn8.staztic.com/app/a/6278/6278761/hd-abstract-wallpapers-1-0-s-307x512.jpg);
+}
+
+.clip-text_eight {
+    background-image: url(http://lorempixel.com/410/200/people);
+}
+
+.clip-text_nine {
+    background-image: url(https://wallpaperbrowse.com/media/images/background-pictures-10.jpg);
+}
+
+.clip-text_ten {
+    background-image: url(http://lorempixel.com/480/200/nightlife/8);
+}
+
+.clip-text_eleven {
+    background-image: url(http://www.wallcoo.net/cartoon/abstract_rainbow_colours_13_1920x1200/images/Abstract_Rainbow_colour_pattern_4116.jpg);
+    background-size: cover;
+}
+
+.clip-text_twelve {
+    background-image: url(http://hd.wallpaperswide.com/thumbs/abstract_wallpaper_for_mac-t2.jpg);
+}
+
+.clip-text_thirteen {
+    background-image: url(http://img.7te.org/images/570x363/abstract-painting-wallpaper-which-is-under-the-abstract-wallpapers-32968.jpg);
+}
+
+.clip-text_fourteen {
+    background-image: url(https://onyx.codes/storage/cache/images/000/016/comet,medium_large.1524515748.png);
+}
+
+.clip-text_fifteen {
+    background-image: url(http://lorempixel.com/480/200/nightlife/5);
+}
